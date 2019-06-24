@@ -23,6 +23,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "register-service-worker": "^1.6.2",
+    "semantic-ui-css": "^2.4.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
@@ -34,6 +35,9 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "pug": "^2.0.4",
+    "pug-html-loader": "^1.1.5",
+    "pug-plain-loader": "^1.0.0",
     "vue-cli-plugin-cordova": "^2.3.1",
     "vue-template-compiler": "^2.6.10"
   }

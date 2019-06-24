@@ -1,11 +1,9 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+  #app
+    #nav.ui.menu
+      router-link.item(to = "/") 倍數著色
+      router-link.item(to = "/about") 倍數猜猜看
+    router-view
 </template>
 
 <style>
@@ -23,9 +21,14 @@
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  font-size: 20px;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+a {
+  cursor: pointer;
 }
 </style>
