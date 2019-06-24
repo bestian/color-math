@@ -1,10 +1,10 @@
 <template lang="pug">
   .hello
     h1 倍數著色
-    h4 點擊任意數字，自動畫出它的所有倍數
     hr
     br
-    h3 
+    h3
+      span(v-if = "myNum == 1000") 點擊任意數字，自動畫出它的所有倍數 
       span(v-if = "myNum !== 1000") {{myNum}}的倍數
     br
     .ui.grid.container
@@ -38,18 +38,23 @@ export default {
 .ui.row {
   padding: 0 !important;
 }
+
 .ui.column {
   text-align: right;
+  padding: 0 !important;
+  overflow: hidden;
 }
 
 a {
-  color: #42b983;
+  color: #39c;
   font-size: 20px;
   display: inline-block;
   min-width: 6vw !important;
-  padding: 3px 0;
-  border-radius: 3px;
+  width: 100%;
+  padding: 3px 2px;
+  border: 1px black solid;
 }
+
 .color {
   background-color: #af0;
 }

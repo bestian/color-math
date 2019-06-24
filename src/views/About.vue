@@ -3,9 +3,10 @@
     h1(v-if = "!isWin && !isLoose") 圖樣猜猜看
     h1(v-if = "isLoose") 不對喔，再試試看吧
     h1(v-if = "isWin") 你猜對了!!是{{myNum}}的倍數
+    hr
     br
     .ui.huge.green.button(@click = "reset()") 猜猜看!
-    hr
+    br
     br
     .ui.grid.container
       .ui.ten.column.row(v-for = "i in [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]")
@@ -23,7 +24,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Guess',
   data () {
     return {
       myNum : 1000,
@@ -59,18 +60,24 @@ export default {
 .ui.row {
   padding: 0 !important;
 }
+
 .ui.column {
   text-align: right;
+  padding: 0 !important;
+  overflow: hidden;
 }
 
 a {
-  color: #42b983;
+  color: #39c;
   font-size: 20px;
   display: inline-block;
   min-width: 6vw !important;
-  padding: 3px 0;
-  border-radius: 3px;
+  width: 100%;
+  padding: 3px 2px;
+  border: 1px black solid;
 }
+
+
 .color {
   background-color: #cf3;
 }
