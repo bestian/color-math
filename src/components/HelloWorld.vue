@@ -51,6 +51,6 @@ a {
   border-radius: 3px;
 }
 .color {
-  background-color: #cf3;
+  background-color: #af0;
 }
 </style>

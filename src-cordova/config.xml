@@ -4,9 +4,57 @@
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="bestian@gmail.com" href="http://cordova.io">
+        Bestian Tang
     </author>
+    <icon src="res/Icon.png" />
+          <platform name="ios">
+              <!-- iOS 8.0+ -->
+              <icon src="res/ios/Icon-1024.png" width="1024" height="1024" />
+              <!-- iPhone 6 Plus  -->
+              <icon src="res/ios/Icon-60@3x.png" width="180" height="180" />
+              <!-- iOS 7.0+ -->
+              <!-- iPhone / iPod Touch  -->
+              <icon src="res/ios/Icon-60.png" width="60" height="60" />
+              <icon src="res/ios/Icon-60@2x.png" width="120" height="120" />
+              <!-- iPad -->
+              <icon src="res/ios/Icon-76.png" width="76" height="76" />
+              <icon src="res/ios/Icon-76@2x.png" width="152" height="152" />
+              <!-- iOS 6.1 -->
+              <!-- Spotlight Icon -->
+              <icon src="res/ios/Icon-40.png" width="40" height="40" />
+              <icon src="res/ios/Icon-40@2x.png" width="80" height="80" />
+              <!-- iPhone / iPod Touch -->
+              <icon src="res/ios/Icon-57.png" width="57" height="57" />
+              <icon src="res/ios/Icon-57@2x.png" width="114" height="114" />
+              <!-- iPad -->
+              <icon src="res/ios/Icon-72.png" width="72" height="72" />
+              <icon src="res/ios/Icon-72@2x.png" width="144" height="144" />
+              <icon src="res/ios/Icon-83.5@2x.png" width="167" height="167" />
+              <!-- iPhone Spotlight and Settings Icon -->
+              <icon src="res/ios/Icon-small.png" width="29" height="29" />
+              <icon src="res/ios/Icon-small@2x.png" width="58" height="58" />
+              <!-- iPad Spotlight and Settings Icon -->
+              <icon src="res/ios/Icon-50.png" width="50" height="50" />
+              <icon src="res/ios/Icon-50@2x.png" width="100" height="100" />
+              <icon src="res/ios/Icon-24@2x.png" width="48" height="48" />
+              <icon src="res/ios/Icon-20.png" width="20" height="20" />
+              <!-- iWatch Settings Icon -->
+              
+              <icon src="res/ios/Icon-16.png" width="16" height="16" />
+              <icon src="res/ios/Icon-86@2x.png" width="172" height="172" />
+              <icon src="res/ios/Icon-29@3x.png" width="87" height="87" />
+              <icon src="res/ios/Icon-44@2x.png" width="88" height="88" />
+              <icon src="res/ios/Icon-27.5@2x.png" width="55" height="55" />
+              <icon src="res/ios/Icon-98@2x.png" width="196" height="196" />
+
+     </platform>
+     <platform name="android">
+          <icon src="res/android/ldpi.png" density="ldpi" />
+          <icon src="res/android/mdpi.png" density="mdpi" />
+          <icon src="res/android/hdpi.png" density="hdpi" />
+          <icon src="res/android/xhdpi.png" density="xhdpi" />
+     </platform>
     <!-- this hook will point your config.xml to the DevServer on Serve -->
     <hook type="after_prepare" src="../node_modules/vue-cli-plugin-cordova/serve-config-hook.js" />
     <content src="index.html" />
