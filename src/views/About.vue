@@ -1,24 +1,22 @@
 <template lang="pug">
   .hello
-    h1(v-if = "!isWin && !isLoose") 圖樣猜猜看
+    h3
+      span(v-if = "myNum !== 1000 && !isWin") 猜猜看，這是誰的倍數，會形成這樣的圖樣呢?
+    .ui.icon.input(v-if = "myNum !== 1000 && !isWin")
+      input(type = "number" min = "1" max = "10" step="1" v-model="gNum" @change="guessNum(gNum)")
+      i.search.icon
     h1(v-if = "isLoose") 不對喔，再試試看吧
     h1(v-if = "isWin") 你猜對了!!是{{myNum}}的倍數
     hr
     br
-    .ui.huge.green.button(@click = "reset()") 猜猜看!
+    .ui.huge.green.button(v-if = "step == 0", @click = "reset()") 猜猜看!
     br
     br
     .ui.grid.container
       .ui.ten.column.row(v-for = "i in [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]")
         .ui.column(v-for = "j in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]")
-          a(v-bind:class = "{ 'color' : (i+j) % myNum == 0}") ?
-    br
-    hr
-    h3
-      span(v-if = "myNum !== 1000") 猜猜看，這是誰的倍數，會形成這樣的圖樣呢?
-    .ui.icon.input
-      input(type = "number" min = "1" max = "10" step="1" v-model="gNum" @change="guessNum(gNum)")
-      i.search.icon
+          a(v-bind:class = "{ 'color' : (i+j) % myNum == 0, 'small': i+j == 100}") ?
+
 </template>
 
 
@@ -27,8 +25,9 @@ export default {
   name: 'Guess',
   data () {
     return {
-      myNum : 1000,
-      gNum : 1,
+      myNum: 1000,
+      gNum: 1,
+      step: 0,
       isWin: false,
       isLoose: false
     }
@@ -38,6 +37,7 @@ export default {
       this.myNum = Math.floor(Math.random()*8 + 2);
       this.isWin = false;
       this.isLoose = false;
+      this.step = 1;
     },
     guessNum (n) {
       if (this.myNum == n) {
@@ -49,7 +49,8 @@ export default {
     },
     win() {
       this.isWin = true;
-      this.isLoose = false
+      this.isLoose = false;
+      this.step = 0;
     }
   }
 }
@@ -68,12 +69,13 @@ export default {
 }
 
 a {
-  color: #39c;
-  font-size: 20px;
+  color: #99f;
+  text-align: center;
+  font-size: 22px;
   display: inline-block;
   min-width: 6vw !important;
   width: 100%;
-  padding: 3px 2px;
+  padding: 6px 2px;
   border: 1px black solid;
 }
 
@@ -81,5 +83,6 @@ a {
 .color {
   background-color: #cf3;
 }
+
 </style>
 

@@ -1,14 +1,13 @@
 <template lang="pug">
   .hello
-    h1 質數篩法
+    h1.ui.header 第{{step}}步
     a.ui.huge.green.button(@click = "start()") 開始!
     hr
-    h4 第{{step}}步
     br
     .ui.grid.container
       .ui.ten.column.row(v-for = "i in [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]")
         .ui.column(v-for = "j in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]")
-          a(@click = "makeColor(i+j)" v-bind:class = "{ 'color' : (i+j) % myNum == 0, 'color1' : i+j == 1, 'color2' : (i+j) % 2 == 0 && i+j != 2 && step > 0, 'color3' : (i+j) % 3 == 0 && i+j != 3 && step > 1, 'color5' : (i+j) % 5 == 0 && i+j != 5 && step > 2, 'color7' : (i+j) % 7 == 0 && i+j != 7 && step > 3}") {{ i+j }}
+          a(@click = "makeColor(i+j)" v-bind:class = "{ 'color' : (i+j) % myNum == 0, 'color1' : i+j == 1, 'color2' : (i+j) % 2 == 0 && i+j != 2 && step > 0, 'color3' : (i+j) % 3 == 0 && i+j != 3 && step > 1, 'color5' : (i+j) % 5 == 0 && i+j != 5 && step > 2, 'color7' : (i+j) % 7 == 0 && i+j != 7 && step > 3, 'small': i+j == 100}") {{ i+j }}
     br
     hr
     .ui.segment.container
@@ -55,13 +54,14 @@ export default {
 
 a {
   color: #39c;
-  font-size: 20px;
+  font-size: 22px;
   display: inline-block;
   min-width: 6vw !important;
   width: 100%;
-  padding: 3px 2px;
+  padding: 6px 2px;
   border: 1px black solid;
 }
+
 a.color {
   background-color: #af0 !important;
 }
@@ -84,6 +84,10 @@ a.color5 {
 
 a.color7 {
   background-color: #a00;
+}
+
+.small {
+  font-size: 16px;
 }
 </style>
 
